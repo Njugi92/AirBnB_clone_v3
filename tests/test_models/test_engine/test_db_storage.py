@@ -87,8 +87,8 @@ class TestFileStorage(unittest.TestCase):
     def test_save(self):
         """Test that save properly saves objects to file.json"""
 
-     def test_get(self):
-        """Test that get returns specific object, or none"""
+    def test_get(self):
+	"""Test that get returns specific object, or none"""
         newState = State(name="New York")
         newState.save()
         newUser = User(email="bob@foobar.com", password="password")
