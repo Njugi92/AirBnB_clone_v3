@@ -87,8 +87,15 @@ class TestFileStorage(unittest.TestCase):
     def test_save(self):
         """Test that save properly saves objects to file.json"""
 
+<<<<<<< HEAD
     def test_get(self):
 	"""Test that get returns specific object, or none"""
+=======
+    @unittest.skipIf(os.getenv('HBNB_TYPE_STORAGE') != 'db',
+                     "not testing db storage")
+    def test_get(self):
+        """Test that get returns specific object, or none"""
+>>>>>>> 08e2ac45b1b9f1b57ed7e107689d6fc36f148bd0
         newState = State(name="New York")
         newState.save()
         newUser = User(email="bob@foobar.com", password="password")
