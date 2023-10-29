@@ -9,7 +9,7 @@ from models.state import State
 from flask import request
 
 
-@app_views.route('/status', methods=['GET'] strict_slashes=False)
+@app_views.route('/status', methods=['GET'])
 def toGet():
     '''getting thing'''
     objects = storage.all('State')
@@ -19,8 +19,7 @@ def toGet():
     return jsonify(lista)
 
 
-@app_views.route('/states/<string:stateid>', methods=['GET'],
-                 strict_slashes=False)
+@app_views.route('/states/<string:stateid>', methods=['GET'])
 def toGetid():
     '''Updates a State object id'''
     objects = storage.get('State', 'state_id')
@@ -29,8 +28,7 @@ def toGetid():
     return jsonify(objects.to_dict()), 'OK'
 
 
-@app_views.route('/states/', methods=['POST'],
-                 strict_slashes=False)
+@app_views.route('/states/', methods=['POST'])
 def posting():
     '''Creates a State'''
     response = request.get_json()
@@ -44,8 +42,7 @@ def posting():
     return jsonify(stateObject.to_dict()), '201'
 
 
-@app_views.route('/states/<state_id>', methods=['PUT'],
-                 strict_slashes=False)
+@app_views.route('/states/<state_id>', methods=['PUT'])
 def putinV():
     '''vladimir'''
     response = request.get_json()
@@ -62,8 +59,7 @@ def putinV():
     return jsonify(stateObject.to_dict()), '200'
 
 
-@app_views.route('/states/<state_id>', methods=['DELETE'],
-                 strict_slashes=False)
+@app_views.route('/states/<state_id>', methods=['DELETE'])
 def deleting():
     ''' to delete an onbject'''
     stateObject = storage.get(State, state_id)
