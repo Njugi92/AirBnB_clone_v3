@@ -2,7 +2,8 @@
 """
 Contains the FileStorage class
 """
-
+import models
+from models import storage
 import json
 from models.amenity import Amenity
 from models.base_model import BaseModel
